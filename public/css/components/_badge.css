@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Components / Badge (_badge.css)
+   ========================================================================== */
+
+/**
+ * Styles pour les badges (petits indicateurs visuels).
+ * Utilisés par exemple pour afficher des statuts (Actif/Inactif) ou des rôles.
+ */
+
+/* Style de base des badges */
+.badge, /* Classe Bootstrap standard */
+.status-badge /* Classe personnalisée (utilisée dans l'ancien code) */
+{
+    display: inline-block;
+    padding: .35em .7em; /* Padding intérieur (un peu plus grand que Bootstrap par défaut) */
+    font-size: 75%; /* Taille de police réduite */
+    font-weight: 600; /* Texte en gras */
+    line-height: 1; /* Hauteur de ligne serrée */
+    color: var(--white-color, #fff); /* Couleur de texte par défaut (blanc) */
+    text-align: center;
+    white-space: nowrap; /* Empêche le retour à la ligne */
+    vertical-align: baseline; /* Alignement standard */
+    border-radius: var(--btn-border-radius); /* Utilise l'arrondi des boutons */
+    text-transform: uppercase; /* Texte en majuscules */
+    letter-spacing: 0.5px; /* Léger espacement des lettres */
+}
+
+/* Style spécifique pour les badges de statut Actif */
+.status-active {
+    color: var(--success-color); /* Texte vert */
+    background-color: rgba(40, 167, 69, 0.1); /* Fond vert très clair (transparent) */
+    /* Optionnel : ajouter une bordure subtile */
+    /* border: 1px solid rgba(40, 167, 69, 0.2); */
+}
+
+/* Style spécifique pour les badges de statut Inactif */
+.status-inactive {
+    color: var(--secondary-color); /* Texte gris */
+    background-color: rgba(108, 117, 125, 0.1); /* Fond gris très clair (transparent) */
+    /* Optionnel : ajouter une bordure subtile */
+    /* border: 1px solid rgba(108, 117, 125, 0.2); */
+}
+
+/* Si vous utilisez les classes de fond Bootstrap (.bg-success, .bg-secondary, etc.) */
+/* Ces classes ajoutent généralement un fond plein. Pour un look plus subtil comme */
+/* status-active/inactive, vous pourriez avoir besoin de classes personnalisées. */
+/* Exemple avec classe Bootstrap standard */
+.badge.bg-primary { background-color: var(--primary-color) !important; color: white; }
+.badge.bg-secondary { background-color: var(--secondary-color) !important; color: white; }
+.badge.bg-success { background-color: var(--success-color) !important; color: white; }
+.badge.bg-danger { background-color: var(--danger-color) !important; color: white; }
+.badge.bg-warning { background-color: var(--warning-color) !important; color: var(--dark-color); }
+.badge.bg-info { background-color: var(--info-color) !important; color: white; }
+.badge.bg-light { background-color: var(--light-color) !important; color: var(--dark-color); }
+.badge.bg-dark { background-color: var(--dark-color) !important; color: white; }

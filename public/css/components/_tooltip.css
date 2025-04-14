@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Components / Tooltip (_tooltip.css)
+   ========================================================================== */
+
+/**
+ * Styles pour les infobulles (tooltips).
+ * Note: Le positionnement est géré par JavaScript (ex: Popper.js via Bootstrap).
+ * Ces styles concernent l'apparence de l'infobulle elle-même.
+ */
+
+/* Style de la bulle interne du tooltip */
+.tooltip-inner {
+    max-width: 350px; /* Largeur maximale */
+    padding: 0.6rem 0.9rem; /* Padding intérieur */
+    color: var(--light-color); /* Texte clair */
+    text-align: left; /* Alignement du texte */
+    background-color: var(--dark-color); /* Fond sombre pour bon contraste */
+    border-radius: var(--btn-border-radius); /* Arrondi */
+    font-size: 0.85rem; /* Taille de police légèrement réduite */
+}
+
+/* Style de la flèche du tooltip */
+/* La couleur de la flèche doit correspondre au fond du .tooltip-inner */
+
+/* Flèche pour tooltip positionné au-dessus (top) */
+.tooltip.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before,
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: var(--dark-color);
+}
+
+/* Flèche pour tooltip positionné en dessous (bottom) */
+.tooltip.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before,
+.tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+  border-bottom-color: var(--dark-color);
+}
+
+/* Flèche pour tooltip positionné à gauche (left) */
+.tooltip.bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before,
+.tooltip.bs-tooltip-start .tooltip-arrow::before {
+  border-left-color: var(--dark-color);
+}
+
+/* Flèche pour tooltip positionné à droite (right) */
+.tooltip.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before,
+.tooltip.bs-tooltip-end .tooltip-arrow::before {
+  border-right-color: var(--dark-color);
+}

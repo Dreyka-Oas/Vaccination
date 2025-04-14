@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Components / Pagination (_pagination.css)
+   ========================================================================== */
+
+/**
+ * Styles pour le composant de pagination.
+ */
+
+/* Conteneur principal de la pagination */
+.pagination {
+    display: flex; /* Aligne les éléments horizontalement */
+    padding-left: 0; /* Supprime le padding par défaut des listes */
+    list-style: none; /* Supprime les puces */
+    margin-bottom: 0; /* Pas de marge basse par défaut (souvent dans un card-footer) */
+    justify-content: center; /* Centre les éléments de pagination */
+}
+
+/* Style de chaque élément de page (li) */
+.page-item {
+    /* Pas de style direct nécessaire généralement */
+}
+
+/* Style des liens de page (a ou span) */
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.8rem; /* Padding intérieur */
+    margin: 0 3px; /* Petit espace entre les numéros */
+    font-size: 0.9rem; /* Taille de police */
+    color: var(--primary-color); /* Couleur du texte */
+    background-color: var(--white-color, #fff); /* Fond blanc */
+    border: 1px solid #dee2e6; /* Bordure grise */
+    border-radius: var(--btn-border-radius); /* Arrondi */
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+/* Style au survol des liens de page */
+.page-link:hover {
+    z-index: 2; /* Passe au-dessus des autres au survol */
+    color: var(--primary-hover);
+    background-color: #e9ecef; /* Fond légèrement grisé */
+    border-color: #dee2e6;
+}
+
+/* Style au focus des liens de page */
+.page-link:focus {
+    z-index: 3;
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.25); /* Ombre de focus */
+}
+
+/* Style de l'élément de page actif */
+.page-item.active .page-link {
+    z-index: 3; /* Au-dessus de tout */
+    color: var(--white-color, #fff); /* Texte blanc */
+    background-color: var(--primary-color); /* Fond couleur primaire */
+    border-color: var(--primary-color); /* Bordure couleur primaire */
+    box-shadow: 0 2px 4px rgba(74, 144, 226, 0.3); /* Légère ombre */
+}
+
+/* Style de l'élément de page désactivé */
+.page-item.disabled .page-link {
+    color: #adb5bd; /* Couleur de texte grisée */
+    pointer-events: none; /* Désactive les clics */
+    background-color: var(--white-color, #fff);
+    border-color: #dee2e6;
+}

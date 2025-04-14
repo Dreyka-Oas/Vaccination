@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Main Stylesheet (main.css)
+   ========================================================================== */
+
+/**
+ * Ce fichier importe tous les autres modules CSS dans un ordre logique.
+ * L'ordre est important en raison de la cascade CSS.
+ * 1. Base (Variables, Reset/Typography)
+ * 2. Layout (Structure générale)
+ * 3. Components (Éléments d'interface réutilisables)
+ * 4. Pages (Styles spécifiques à certaines pages)
+ */
+
+/* --- 1. Base --- */
+@import url('base/_variables.css');
+@import url('base/_typography.css');
+
+/* --- 2. Layout --- */
+@import url('layout/_container.css');
+
+/* --- 3. Components --- */
+@import url('components/_card.css');
+@import url('components/_button.css');
+@import url('components/_form.css');
+@import url('components/_table.css');
+@import url('components/_alert.css');
+@import url('components/_badge.css');
+@import url('components/_modal.css');
+@import url('components/_pagination.css');
+@import url('components/_tooltip.css');
+
+/* --- 4. Pages --- */
+@import url('pages/_login.css');
+@import url('pages/_homepage.css');
+
+/* --- Styles additionnels spécifiques non modulaires (si nécessaire) --- */
+/*
+ * Évitez de mettre trop de styles ici. Préférez créer de nouveaux
+ * modules ou compléter les modules existants.
+ */
+ /* Exemple d'ajustement utilisé dans admin.php pour centrer les boutons */
+.admin-button-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* Utilise la variable via .btn ou directement var(--spacing-unit) */
+    padding: 1rem 0;
+}
+
+.admin-button-list .btn {
+    width: 100%;
+    max-width: 320px;
+}
+
+/* Exemple d'ajustement pour dashboard.php */
+.user-info-header .badge {
+    font-size: 0.8em;
+    vertical-align: middle;
+}
+.user-info-header .btn-logout {
+   padding: 0.3rem 0.7rem;
+   font-size: 0.9em;
+}

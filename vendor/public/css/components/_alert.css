@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Components / Alert (_alert.css)
+   ========================================================================== */
+
+/**
+ * Styles pour les messages d'alerte/notification.
+ * Utilisés pour afficher des messages de succès, d'erreur, d'information, etc.
+ * Inclut les styles de base, les variations de couleur et le bouton de fermeture.
+ */
+
+/* Style de base des alertes */
+.alert {
+    position: relative; /* Nécessaire pour positionner absolument le bouton de fermeture */
+    padding: 0.9rem 1.2rem; /* Espace intérieur */
+    margin-bottom: var(--spacing-unit); /* Espace en dessous de l'alerte */
+    border: 1px solid transparent; /* Bordure transparente par défaut (la couleur sera définie par les variations) */
+    border-radius: var(--btn-border-radius); /* Utilise le même arrondi que les boutons */
+    font-size: 0.95rem; /* Taille de la police */
+}
+
+/* Style pour les alertes qui peuvent être fermées par l'utilisateur */
+.alert-dismissible {
+    /* Ajoute de l'espace à droite pour ne pas superposer le texte et le bouton */
+    padding-right: 3rem; /* Ajustez cette valeur si nécessaire */
+}
+
+/* Style du bouton de fermeture (utilise la classe .btn-close de Bootstrap) */
+.alert-dismissible .btn-close {
+    position: absolute; /* Positionnement par rapport à .alert */
+    top: 0;
+    right: 0;
+    z-index: 2; /* S'assure qu'il est au-dessus du contenu */
+    /* Le padding est important pour la zone cliquable */
+    padding: 1rem 1.2rem; /* Correspond au padding vertical et horizontal de l'alerte pour aligner */
+    /* L'apparence (couleur, etc.) du .btn-close est généralement fournie */
+    /* par le framework CSS (comme Bootstrap) ou peut être personnalisée ici */
+    /* Exemple de personnalisation simple : */
+    /* background: transparent url("...") center/1em auto no-repeat; */
+    /* border: 0; */
+    /* opacity: 0.5; */
+}
+/* .alert-dismissible .btn-close:hover { */
+/*    opacity: 0.75; */
+/* } */
+
+
+/* Variations de couleur des alertes */
+/* Utilisation des classes standard de Bootstrap pour la compatibilité */
+/* Les couleurs exactes proviennent des variables :root mais sont appliquées ici */
+/* pour définir les couleurs de texte, de fond et de bordure spécifiques à chaque type d'alerte. */
+
+/* Alerte Succès */
+.alert-success {
+    color: #0f5132; /* Couleur de texte foncée dérivée de --success-color */
+    background-color: #d1e7dd; /* Fond clair dérivé de --success-color */
+    border-color: #badbcc; /* Bordure encore plus claire dérivée de --success-color */
+}
+.alert-success hr { /* Ligne horizontale dans une alerte succès */
+    border-top-color: #a3cfbb;
+}
+.alert-success .alert-link { /* Liens dans une alerte succès */
+    color: #0a3622;
+}
+
+
+/* Alerte Danger/Erreur */
+.alert-danger {
+    color: #842029; /* Couleur de texte foncée dérivée de --danger-color */
+    background-color: #f8d7da; /* Fond clair dérivé de --danger-color */
+    border-color: #f5c2c7; /* Bordure encore plus claire dérivée de --danger-color */
+}
+.alert-danger hr {
+    border-top-color: #f1b0b7;
+}
+.alert-danger .alert-link {
+    color: #58151c;
+}
+
+
+/* Alerte Avertissement */
+.alert-warning {
+    color: #664d03; /* Couleur de texte foncée dérivée de --warning-color */
+    background-color: #fff3cd; /* Fond clair dérivé de --warning-color */
+    border-color: #ffecb5; /* Bordure encore plus claire dérivée de --warning-color */
+}
+.alert-warning hr {
+    border-top-color: #ffe69c;
+}
+.alert-warning .alert-link {
+    color: #4d3a02;
+}
+
+
+/* Alerte Information */
+.alert-info {
+    color: #055160; /* Couleur de texte foncée dérivée de --info-color */
+    background-color: #cff4fc; /* Fond clair dérivé de --info-color */
+    border-color: #b6effb; /* Bordure encore plus claire dérivée de --info-color */
+}
+.alert-info hr {
+    border-top-color: #a1e9f9;
+}
+.alert-info .alert-link {
+    color: #033944;
+}
+
+
+/* Alerte Claire */
+.alert-light {
+    color: #636464; /* Couleur de texte foncée dérivée de --light-color */
+    background-color: #fefefe; /* Fond clair dérivé de --light-color */
+    border-color: #fcfcfc; /* Bordure encore plus claire dérivée de --light-color */
+}
+.alert-light hr {
+    border-top-color: #ececec;
+}
+.alert-light .alert-link {
+    color: #4f5050;
+}
+
+
+/* Alerte Sombre */
+.alert-dark {
+    color: #141619; /* Couleur de texte foncée dérivée de --dark-color */
+    background-color: #d3d3d4; /* Fond clair dérivé de --dark-color */
+    border-color: #bcbebf; /* Bordure encore plus claire dérivée de --dark-color */
+}
+.alert-dark hr {
+    border-top-color: #afb1b3;
+}
+.alert-dark .alert-link {
+    color: #0f1012;
+}
+
+/* Styles pour les éléments spécifiques possibles dans une alerte */
+.alert-heading { /* Pour un titre Hn dans une alerte */
+  color: inherit; /* Hérite la couleur de l'alerte parente */
+}

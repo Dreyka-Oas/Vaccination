@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Base / Variables (_variables.css)
+   ========================================================================== */
+
+/**
+ * Définition des variables globales CSS (Custom Properties).
+ * Centralise les valeurs réutilisables comme les couleurs, les polices,
+ * les espacements, etc., pour faciliter la maintenance et la cohérence du thème.
+ */
+
+ :root {
+    /* Palette de Couleurs Principales */
+    --primary-color: #4A90E2; /* Bleu doux principal */
+    --primary-hover: #357ABD; /* Bleu pour le survol/actif */
+
+    --secondary-color: #6c757d; /* Gris secondaire */
+    --secondary-hover: #5a6268; /* Gris pour le survol/actif */
+
+    /* Couleurs Sémantiques (Feedback Utilisateur) */
+    --success-color: #28a745; /* Vert pour succès */
+    --success-hover: #218838;
+    --danger-color: #dc3545; /* Rouge pour danger/erreur */
+    --danger-hover: #c82333;
+    --warning-color: #ffc107; /* Jaune pour avertissement */
+    --warning-hover: #e0a800;
+    --info-color: #17a2b8; /* Cyan/Bleu clair pour information */
+    --info-hover: #138496;
+
+    /* Couleurs Neutres */
+    --light-color: #f8f9fa; /* Très clair, presque blanc */
+    --dark-color: #343a40; /* Gris très foncé, presque noir */
+    --white-color: #ffffff; /* Blanc pur */
+
+    /* Typographie */
+    --font-family-base: 'Inter', 'Poppins', sans-serif; /* Polices utilisées dans le projet */
+    --body-bg: #f4f7fc; /* Couleur de fond générale du site */
+    --text-color: #333; /* Couleur de texte principale */
+    --text-light: #666; /* Couleur de texte secondaire/plus claire */
+    --font-size-base: 0.95rem; /* Taille de police par défaut */
+    --line-height-base: 1.6; /* Hauteur de ligne par défaut */
+
+    /* Mise en Page et Espacement */
+    --container-max-width: 1400px; /* Largeur maximale du contenu principal */
+    --container-padding: 1.5rem; /* Padding horizontal pour le conteneur */
+    --spacing-unit: 1rem; /* Unité d'espacement de base (ex: 16px) */
+
+    /* Composants UI */
+    --card-bg: var(--white-color, #ffffff); /* Couleur de fond des cartes */
+    --card-border-radius: 10px; /* Arrondi des bordures de cartes */
+    --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Ombre portée des cartes */
+
+    --input-border: #ced4da; /* Bordure des champs de formulaire */
+    --input-focus: var(--primary-color); /* Couleur de la bordure/ombre au focus */
+    --input-bg: var(--white-color, #ffffff); /* Fond des champs de formulaire */
+
+    --btn-border-radius: 6px; /* Arrondi des bordures des boutons */
+
+    /* Effets Visuels */
+    --header-bg-gradient: linear-gradient(to right, var(--primary-color), var(--primary-hover)); /* Dégradé pour les en-têtes */
+}

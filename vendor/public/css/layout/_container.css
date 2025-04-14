@@ -1,0 +1,18 @@
+/* ==========================================================================
+   Layout / Container (_container.css)
+   ========================================================================== */
+
+/**
+ * Style du conteneur principal de la page.
+ * Utilisé pour centrer le contenu et limiter sa largeur.
+ */
+
+ .dashboard-container {
+    max-width: var(--container-max-width); /* Largeur maximale définie dans les variables */
+    margin-left: auto; /* Centre le conteneur horizontalement */
+    margin-right: auto; /* Centre le conteneur horizontalement */
+    margin-top: calc(var(--spacing-unit) * 2); /* Espace au-dessus du conteneur */
+    margin-bottom: calc(var(--spacing-unit) * 2); /* Espace en dessous du conteneur */
+    padding-left: var(--container-padding); /* Espace intérieur gauche */
+    padding-right: var(--container-padding); /* Espace intérieur droit */
+}

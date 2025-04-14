@@ -1,0 +1,176 @@
+/* ==========================================================================
+   Components / Form (_form.css)
+   ========================================================================== */
+
+/**
+ * Styles pour les éléments de formulaire : labels, inputs, selects, checkboxes, etc.
+ */
+
+/* Style des labels */
+.form-label {
+    margin-bottom: 0.5rem; /* Espace sous le label */
+    font-weight: 500; /* Label légèrement en gras */
+    font-size: 0.9rem; /* Taille de police du label */
+    display: inline-block; /* Permet d'appliquer margin-bottom */
+}
+
+/* Style commun pour les inputs de texte, email, password, number, date, etc. et les selects */
+.form-control,
+.form-select {
+    display: block; /* Prend toute la largeur disponible */
+    width: 100%;
+    padding: 0.6rem 0.9rem; /* Padding intérieur */
+    font-size: 0.95rem; /* Taille de police */
+    font-weight: 400;
+    line-height: var(--line-height-base);
+    color: var(--text-color);
+    background-color: var(--input-bg);
+    background-clip: padding-box;
+    border: 1px solid var(--input-border);
+    appearance: none; /* Supprime l'apparence native (surtout pour selects) */
+    border-radius: var(--btn-border-radius); /* Utilise le même arrondi que les boutons */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Transitions douces */
+}
+
+/* Style pour les versions "small" des champs */
+.form-control-sm,
+.form-select-sm {
+    padding: 0.4rem 0.8rem; /* Padding réduit */
+    font-size: 0.9rem; /* Taille de police réduite */
+    /* border-radius peut aussi être ajusté si besoin */
+}
+
+/* Style au focus des inputs et selects */
+.form-control:focus,
+.form-select:focus {
+    color: var(--text-color);
+    background-color: var(--input-bg);
+    border-color: var(--input-focus); /* Change la couleur de bordure */
+    outline: 0; /* Supprime l'outline par défaut */
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2); /* Ajoute une ombre de focus (utilise la couleur primaire) */
+}
+
+/* Style pour les placeholders */
+.form-control::placeholder {
+    color: var(--text-light);
+    opacity: 0.7;
+}
+
+/* Style pour les inputs désactivés */
+.form-control:disabled, .form-control[readonly] {
+    background-color: #e9ecef; /* Fond grisé */
+    opacity: 1; /* S'assurer que le texte reste lisible */
+    cursor: not-allowed;
+}
+
+/* Style pour les selects (flèche personnalisée via background-image) */
+.form-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.9rem center;
+    background-size: 16px 12px;
+}
+.form-select:disabled {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%236c757d' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+/* Style pour les checkboxes et radios */
+.form-check-input {
+    width: 1em;
+    height: 1em;
+    margin-top: 0.25em; /* Alignement vertical avec le label */
+    vertical-align: top;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    appearance: none; /* Supprime l'apparence native */
+    border-radius: 4px; /* Léger arrondi */
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.form-check-input[type="radio"] {
+    border-radius: 50%; /* Rond pour les radios */
+}
+
+/* Style quand coché */
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+/* Style de l'indicateur (check ou point) */
+.form-check-input:checked[type="checkbox"] {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+}
+.form-check-input:checked[type="radio"] {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+/* Style au focus de la checkbox/radio */
+.form-check-input:focus {
+    border-color: var(--input-focus);
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+/* Style du label associé à une checkbox/radio */
+.form-check-label {
+    font-size: 0.95rem;
+    padding-left: 0.3rem; /* Espace entre l'input et le label */
+    cursor: pointer;
+}
+
+/* Style pour les 'switch' (bascule type iOS) */
+.form-switch {
+  padding-left: 2.5em; /* Espace pour la bascule */
+}
+.form-switch .form-check-input {
+  width: 2em; /* Largeur de la bascule */
+  margin-left: -2.5em;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
+  background-position: left center;
+  border-radius: 2em; /* Arrondi complet */
+  transition: background-position 0.15s ease-in-out;
+}
+.form-switch .form-check-input:checked {
+  background-position: right center;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+.form-switch .form-check-input:focus {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e"); /* Rétablit l'image non cochée au focus */
+}
+.form-switch .form-check-input:checked:focus {
+     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e"); /* Rétablit l'image cochée au focus */
+}
+
+
+/* Indicateur visuel pour les champs requis */
+.required-field::after {
+    content: " *"; /* Ajoute une étoile après le texte du label */
+    color: var(--danger-color);
+    font-weight: normal; /* Étoile non grasse */
+    margin-left: 2px;
+}
+
+/* Texte d'aide sous les champs de formulaire */
+.form-text {
+    font-size: 0.85rem; /* Texte plus petit */
+    color: var(--text-light); /* Couleur plus claire */
+    margin-top: 0.25rem; /* Petit espace au-dessus */
+}
+
+/* Style spécifique pour un groupe de checkboxes (utilisé dans gerer_campagnes.php par exemple) */
+.type-checkbox-group {
+    background-color: #f8f9fa; /* Fond légèrement grisé */
+    padding: 0.8rem; /* Padding intérieur */
+    border: 1px solid #eee; /* Bordure fine */
+    border-radius: var(--btn-border-radius); /* Même arrondi que les boutons/inputs */
+    display: flex; /* Pour aligner les checkboxes horizontalement */
+    flex-wrap: wrap; /* Permet le retour à la ligne si pas assez de place */
+    gap: 1rem; /* Espace entre les checkboxes */
+}
+.type-checkbox-group .form-check { /* Style pour chaque élément checkbox dans le groupe */
+    padding-left: 0; /* Annule le padding par défaut si nécessaire */
+    margin-right: 0; /* Remplacé par 'gap' sur le parent */
+}
+.type-checkbox-group .form-check-label {
+    margin-right: 0; /* Le gap gère l'espacement */
+    font-weight: normal; /* Texte normal pour les options */
+}

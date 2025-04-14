@@ -1,0 +1,91 @@
+/* ==========================================================================
+   Components / Modal (_modal.css)
+   ========================================================================== */
+
+/**
+ * Styles pour les fenêtres modales (popups).
+ * Note: Le positionnement et l'affichage/masquage sont souvent gérés par JavaScript
+ * et les classes de base de Bootstrap (.modal, .fade, .show).
+ * Ces styles concernent principalement l'apparence du contenu de la modale.
+ */
+
+/* Contenu de la modale */
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Prend la largeur du conteneur .modal-dialog */
+    pointer-events: auto; /* Permet les interactions */
+    background-color: var(--card-bg); /* Utilise le fond des cartes */
+    background-clip: padding-box;
+    border: none; /* Pas de bordure par défaut */
+    border-radius: var(--card-border-radius); /* Utilise l'arrondi des cartes */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Ombre portée significative */
+    outline: 0; /* Pas d'outline */
+}
+
+/* En-tête de la modale */
+.modal-header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center; /* Centre verticalement le titre et le bouton fermer */
+    justify-content: space-between; /* Espace entre titre et bouton fermer */
+    padding: 1rem 1.5rem; /* Padding intérieur */
+    border-bottom: 1px solid #eee; /* Ligne de séparation sous l'en-tête */
+    border-top-left-radius: var(--card-border-radius); /* Arrondi coin sup gauche */
+    border-top-right-radius: var(--card-border-radius); /* Arrondi coin sup droit */
+}
+
+/* Titre de la modale */
+.modal-header .modal-title {
+    margin-bottom: 0; /* Pas de marge basse pour le titre */
+    line-height: 1.5; /* Hauteur de ligne standard */
+    font-size: 1.2rem; /* Taille du titre */
+    font-weight: 600; /* Titre en gras */
+}
+
+/* Bouton de fermeture dans l'en-tête */
+.modal-header .btn-close {
+    padding: 0.5rem; /* Zone cliquable */
+    margin: -0.5rem -0.5rem -0.5rem auto; /* Positionnement à droite */
+}
+
+/* Corps de la modale */
+.modal-body {
+    position: relative;
+    flex: 1 1 auto; /* Permet au corps de grandir */
+    padding: 1.5rem; /* Padding intérieur */
+    /* C'est ici que vient le contenu principal de la modale */
+}
+
+/* Pied de page de la modale */
+.modal-footer {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne */
+    flex-shrink: 0;
+    align-items: center; /* Alignement vertical des boutons */
+    justify-content: flex-end; /* Alignement des boutons à droite par défaut */
+    padding: 1rem 1.5rem; /* Padding intérieur */
+    background-color: #f8f9fa; /* Fond légèrement grisé */
+    border-top: 1px solid #eee; /* Ligne de séparation au-dessus */
+    border-bottom-right-radius: var(--card-border-radius); /* Arrondi coin inf droit */
+    border-bottom-left-radius: var(--card-border-radius); /* Arrondi coin inf gauche */
+}
+/* Espace entre les éléments dans le pied de page */
+.modal-footer > * {
+    margin: 0.25rem;
+}
+
+/* Style spécifique pour les en-têtes de modale colorés (ex: confirmation suppression) */
+.modal-header.bg-danger {
+    background-color: var(--danger-color); /* Fond rouge */
+    color: var(--white-color, white); /* Texte blanc */
+    /* border-radius est déjà appliqué */
+}
+.modal-header.bg-danger .modal-title {
+     color: var(--white-color, white); /* S'assure que le titre est blanc */
+}
+/* Ajuste la couleur du bouton de fermeture sur fond sombre/coloré */
+.modal-header.bg-danger .btn-close {
+    filter: brightness(0) invert(1); /* Rend l'icône 'X' blanche */
+}

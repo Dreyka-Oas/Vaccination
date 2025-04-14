@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Components / Card (_card.css)
+   ========================================================================== */
+
+/**
+ * Styles pour le composant 'card' (carte), utilisé pour grouper du contenu.
+ * Inclut les styles pour la carte elle-même, son en-tête, corps et pied de page.
+ */
+
+/* Style de base de la carte */
+.card {
+    background-color: var(--card-bg);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--card-shadow);
+    margin-bottom: calc(var(--spacing-unit) * 1.5); /* Espace sous chaque carte */
+    border: none; /* Supprime la bordure par défaut (si Bootstrap est utilisé) */
+    overflow: hidden; /* Assure que les enfants respectent le border-radius */
+}
+
+/* Style de l'en-tête de la carte */
+/* .header est une classe alternative pour appliquer le dégradé */
+.card-header,
+.header {
+    background: var(--header-bg-gradient);
+    color: var(--white-color, #ffffff); /* Texte blanc sur fond dégradé */
+    padding: var(--spacing-unit) calc(var(--spacing-unit) * 1.25); /* Padding intérieur */
+    border-bottom: none; /* Pas de bordure basse par défaut */
+    /* border-radius est géré par .card pour les coins supérieurs */
+}
+
+/* Style pour les titres h1 dans l'en-tête */
+.card-header h1,
+.header h1 {
+    font-size: 1.5rem; /* Taille du titre principal dans l'en-tête */
+    margin-bottom: 0.25rem; /* Petit espace sous le titre */
+    font-weight: 600;
+}
+
+/* Style pour les paragraphes (sous-titres) dans l'en-tête */
+.card-header p,
+.header p {
+    font-size: 0.9rem; /* Taille plus petite pour le sous-titre */
+    opacity: 0.85; /* Légère transparence */
+    margin-bottom: 0; /* Pas d'espace en dessous */
+}
+
+/* Style du corps de la carte */
+.card-body {
+    padding: calc(var(--spacing-unit) * 1.5); /* Padding intérieur généreux */
+}
+
+/* Style du pied de page de la carte */
+.card-footer {
+    background-color: var(--light-color); /* Fond clair pour le pied de page */
+    border-top: 1px solid #e9ecef; /* Ligne de séparation fine */
+    padding: var(--spacing-unit) calc(var(--spacing-unit) * 1.25); /* Padding intérieur */
+    /* border-radius est géré par .card pour les coins inférieurs */
+}

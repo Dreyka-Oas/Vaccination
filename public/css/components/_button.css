@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Components / Button (_button.css)
+   ========================================================================== */
+
+/**
+ * Styles pour les boutons.
+ * Inclut le style de base, les variations de couleur (primary, secondary, etc.),
+ * les tailles (sm), l'état désactivé et les styles spécifiques pour les boutons d'action.
+ */
+
+/* Style de base des boutons */
+.btn {
+    display: inline-flex; /* Permet d'aligner icône et texte et d'appliquer gap */
+    align-items: center; /* Alignement vertical de l'icône et du texte */
+    justify-content: center; /* Centrage horizontal du contenu */
+    padding: 0.6rem 1.2rem; /* Padding intérieur */
+    font-weight: 500; /* Texte légèrement en gras */
+    font-size: 0.95rem; /* Taille de police */
+    line-height: var(--line-height-base); /* Hauteur de ligne standard */
+    text-align: center; /* Centrage du texte (utile si pas flex) */
+    vertical-align: middle; /* Aide à l'alignement avec d'autres éléments inline */
+    cursor: pointer; /* Curseur main */
+    user-select: none; /* Empêche la sélection du texte du bouton */
+    border: 1px solid transparent; /* Bordure transparente par défaut */
+    border-radius: var(--btn-border-radius); /* Arrondi des coins */
+    background-color: transparent; /* Fond transparent par défaut (pour les outline) */
+    transition: all 0.2s ease; /* Transition douce pour toutes les propriétés */
+    gap: 0.4rem; /* Espace entre l'icône (si présente) et le texte */
+}
+
+/* Styles pour les icônes dans les boutons (ajustements si nécessaire) */
+.btn i {
+    /* line-height: 0; */ /* Parfois utile mais souvent pas nécessaire avec flex */
+    /* margin-right: 0; */ /* Remplacé par 'gap' sur .btn */
+}
+
+/* Style pour les boutons de petite taille */
+.btn-sm {
+    padding: 0.4rem 0.8rem; /* Padding réduit */
+    font-size: 0.85rem; /* Taille de police réduite */
+    gap: 0.3rem; /* Espace icône/texte réduit */
+    /* border-radius peut être ajusté aussi si besoin */
+}
+
+/* Variations de couleur des boutons */
+.btn-primary { background-color: var(--primary-color); color: var(--white-color, white); border-color: var(--primary-color); }
+.btn-primary:hover { background-color: var(--primary-hover); color: var(--white-color, white); border-color: var(--primary-hover); }
+
+.btn-secondary { background-color: var(--secondary-color); color: var(--white-color, white); border-color: var(--secondary-color); }
+.btn-secondary:hover { background-color: var(--secondary-hover); color: var(--white-color, white); border-color: var(--secondary-hover); }
+
+.btn-success { background-color: var(--success-color); color: var(--white-color, white); border-color: var(--success-color); }
+.btn-success:hover { background-color: var(--success-hover); color: var(--white-color, white); border-color: var(--success-hover); }
+
+.btn-danger { background-color: var(--danger-color); color: var(--white-color, white); border-color: var(--danger-color); }
+.btn-danger:hover { background-color: var(--danger-hover); color: var(--white-color, white); border-color: var(--danger-hover); }
+
+.btn-warning { background-color: var(--warning-color); color: var(--dark-color); border-color: var(--warning-color); }
+.btn-warning:hover { background-color: var(--warning-hover); color: var(--dark-color); border-color: var(--warning-hover); }
+
+.btn-info { background-color: var(--info-color); color: var(--white-color, white); border-color: var(--info-color); }
+.btn-info:hover { background-color: var(--info-hover); color: var(--white-color, white); border-color: var(--info-hover); }
+
+.btn-light { background-color: var(--light-color); color: var(--dark-color); border-color: #dee2e6; }
+.btn-light:hover { background-color: #e9ecef; color: var(--dark-color); border-color: #dee2e6; }
+
+/* Style pour les boutons "outline" (contour seulement) */
+.btn-outline-secondary { border-color: var(--secondary-color); color: var(--secondary-color); }
+.btn-outline-secondary:hover { background-color: var(--secondary-color); color: var(--white-color, white); }
+/* Ajoutez d'autres btn-outline-* si nécessaire (ex: btn-outline-primary, etc.) */
+.btn-outline-primary { border-color: var(--primary-color); color: var(--primary-color); }
+.btn-outline-primary:hover { background-color: var(--primary-color); color: var(--white-color, white); }
+
+/* Style au focus des boutons */
+.btn:focus, .btn:active {
+    outline: 0; /* Supprime l'outline par défaut */
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.25); /* Ajoute une ombre de focus */
+}
+/* Spécifique pour les boutons outline pour que le fond change au focus/active */
+.btn-outline-secondary:focus, .btn-outline-secondary:active {
+    background-color: var(--secondary-color);
+    color: var(--white-color, white);
+}
+.btn-outline-primary:focus, .btn-outline-primary:active {
+    background-color: var(--primary-color);
+    color: var(--white-color, white);
+}
+
+
+/* Style pour les boutons désactivés */
+.btn:disabled, .btn.disabled {
+    opacity: 0.65; /* Réduit l'opacité */
+    cursor: not-allowed; /* Curseur indiquant l'interdiction */
+    pointer-events: none; /* Désactive les événements de clic */
+}
+
+/* Boutons d'action spécifiques (souvent utilisés dans les tableaux) */
+.btn-action {
+    /* display: inline-flex; déjà hérité de .btn */
+    /* align-items: center; déjà hérité de .btn */
+    /* justify-content: center; déjà hérité de .btn */
+    width: 34px; /* Taille fixe pour un cercle */
+    height: 34px; /* Taille fixe pour un cercle */
+    padding: 0; /* Pas de padding intérieur */
+    border-radius: 50%; /* Rend le bouton parfaitement rond */
+    margin: 0 3px; /* Petit espace horizontal entre les boutons d'action */
+    font-size: 0.9rem; /* Taille de l'icône */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Légère ombre */
+    flex-shrink: 0; /* Empêche le bouton de rétrécir dans un conteneur flex */
+}
+/* Réinitialise le gap pour les boutons d'action (une seule icône) */
+.btn-action i {
+    margin: 0; /* Pas besoin de marge car pas de texte */
+}
+/* Effet au survol des boutons d'action */
+.btn-action:hover {
+    transform: translateY(-1px); /* Léger déplacement vers le haut */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Ombre plus prononcée */
+}

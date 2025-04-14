@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Pages / Homepage (_homepage.css)
+   ========================================================================== */
+
+/**
+ * Styles spécifiques à la page d'accueil (Dashboard dans ce cas).
+ * Note: Certains styles peuvent se chevaucher avec _login.css s'ils sont très similaires.
+ * Les styles .search-card et .search-section pourraient être dans _card.css
+ * ou un composant _search.css si réutilisés ailleurs.
+ */
+
+/* Conteneur pour la page d'accueil (peut utiliser .dashboard-container) */
+/* Si .homepage-container est spécifique et différent : */
+.homepage-container {
+    padding: 30px; /* Padding général */
+    text-align: center; /* Centre le contenu par défaut */
+    /* Si .dashboard-container est utilisé, ces styles ne sont pas nécessaires */
+     max-width: var(--container-max-width);
+     margin: 2rem auto;
+}
+
+/* En-tête spécifique à la page d'accueil */
+.homepage-header {
+    margin-bottom: 50px; /* Grand espace sous l'en-tête */
+    text-align: center; /* S'assurer que c'est centré */
+}
+
+.homepage-header h1 {
+    font-size: 2.5rem; /* Grand titre */
+    margin-bottom: 10px; /* Espace sous le titre */
+    color: var(--primary-color); /* Couleur primaire pour le titre */
+}
+
+.homepage-header p {
+    font-size: 1.1rem; /* Sous-titre légèrement plus grand */
+    color: var(--text-light); /* Couleur de texte claire */
+    max-width: 700px; /* Limite la largeur du paragraphe */
+    margin-left: auto; /* Centre le paragraphe */
+    margin-right: auto; /* Centre le paragraphe */
+}
+
+/* Section de recherche */
+.search-section {
+    max-width: 600px; /* Limite la largeur de la section */
+    margin: 0 auto 40px auto; /* Centre la section et ajoute espace en bas */
+}
+
+/* Carte spécifique pour la recherche (hérite de .card) */
+.search-card {
+    /* Le style de base .card est appliqué */
+    /* Pas besoin de padding ici si .card-body est utilisé */
+    text-align: center; /* Centre le contenu de la carte */
+}
+
+.search-card .card-body h2 { /* Cible le H2 dans le card-body */
+    margin-bottom: 20px; /* Espace sous le titre de la carte */
+    color: var(--text-color); /* Couleur de texte standard */
+    font-size: 1.5rem; /* Taille du titre de section */
+}
+
+.search-card .card-body p { /* Cible le P dans le card-body */
+    color: var(--text-light);
+    margin-bottom: 25px; /* Espace sous le paragraphe descriptif */
+}
+
+/* Pied de page spécifique à la homepage */
+.homepage-footer {
+    text-align: center; /* Centre le contenu du pied de page */
+    margin-top: 3rem; /* Espace au-dessus du pied de page */
+}

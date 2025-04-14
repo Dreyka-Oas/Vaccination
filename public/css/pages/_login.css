@@ -1,0 +1,101 @@
+/* ==========================================================================
+   Pages / Login (_login.css)
+   ========================================================================== */
+
+/**
+ * Styles spécifiques à la page de connexion.
+ */
+
+/* Conteneur principal de la page de login */
+.login-container {
+    display: flex; /* Utilise flexbox pour centrer */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    min-height: 100vh; /* Prend au moins toute la hauteur de la fenêtre */
+    padding: var(--container-padding); /* Padding autour */
+}
+
+/* Carte spécifique pour le formulaire de login */
+.login-card {
+    width: 100%; /* Prend la largeur disponible */
+    max-width: 450px; /* Limite la largeur maximale de la carte */
+    /* Le style de base de .card (fond, ombre, radius) est déjà appliqué */
+    /* Pas besoin de padding spécifique ici si .card-body est utilisé */
+}
+
+/* En-tête dans la carte de login */
+.login-header {
+    text-align: center; /* Centre le contenu de l'en-tête */
+    margin-bottom: 2rem; /* Espace sous l'en-tête */
+}
+
+.login-header h2 {
+    font-size: 1.8rem; /* Taille du titre principal */
+    margin-bottom: 0.8rem; /* Espace sous le titre */
+    font-weight: 600;
+    color: var(--text-color); /* Utilise la couleur de texte standard */
+}
+
+.login-header p {
+    font-size: 1rem; /* Taille du sous-titre */
+    color: var(--text-light); /* Couleur de texte plus claire */
+}
+
+/* Conteneur pour input avec icône à l'intérieur (si non géré par input-group) */
+.input-with-icon {
+    position: relative; /* Nécessaire pour positionner l'icône absolument */
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 15px; /* Position de l'icône depuis la gauche */
+    top: 50%; /* Alignement vertical */
+    transform: translateY(-50%); /* Ajustement fin de l'alignement vertical */
+    color: #aaa; /* Couleur de l'icône */
+    pointer-events: none; /* Empêche l'icône d'intercepter les clics */
+}
+
+/* Ajustement du padding gauche pour les inputs ayant une icône */
+.login-form input[type="text"].form-control,
+.login-form input[type="password"].form-control {
+    /* S'assurer que .input-with-icon est le parent direct ou ajuster le sélecteur */
+    /* Si .input-group de Bootstrap est utilisé, ce style n'est plus nécessaire */
+    /* padding-left: 45px; */ /* Espace pour l'icône */
+}
+/* Utiliser .input-group de Bootstrap est souvent plus simple */
+.login-form .input-group .form-control {
+    /* Pas besoin de padding-left spécifique, Bootstrap le gère */
+}
+
+
+/* Section "Se souvenir de moi" et "Mot de passe oublié" */
+.remember-forgot {
+    display: flex;
+    justify-content: space-between; /* Espace entre les deux éléments */
+    align-items: center; /* Alignement vertical */
+    margin-bottom: 1.5rem; /* Espace sous cette section */
+    font-size: 0.9rem; /* Taille de police réduite */
+}
+
+.remember-me {
+    display: flex;
+    align-items: center; /* Alignement de la checkbox et du label */
+}
+
+.remember-me .form-check-input {
+    margin-top: 0; /* Annule le décalage vertical par défaut */
+    margin-right: 8px; /* Espace entre la checkbox et le label */
+}
+.remember-me .form-check-label {
+    padding-left: 0; /* Annule le padding par défaut */
+}
+
+/* Style du lien "Mot de passe oublié" */
+.forgot-password {
+    color: var(--primary-color);
+}
+
+.forgot-password:hover {
+    color: var(--primary-hover);
+    text-decoration: underline; /* Souligner au survol pour ce lien */
+}

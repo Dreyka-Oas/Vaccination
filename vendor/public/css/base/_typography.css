@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Base / Typography (_typography.css)
+   ========================================================================== */
+
+/**
+ * Styles globaux pour le corps du document (`body`), les liens (`a`),
+ * et importation des polices de caractères.
+ */
+
+/* Importation des polices Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Styles de base pour le corps du document */
+body {
+    font-family: var(--font-family-base);
+    background-color: var(--body-bg);
+    color: var(--text-color);
+    margin: 0; /* Réinitialise les marges par défaut */
+    padding: 0; /* Réinitialise les paddings par défaut */
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    -webkit-font-smoothing: antialiased; /* Améliore le rendu des polices sur Webkit/Blink */
+    -moz-osx-font-smoothing: grayscale; /* Améliore le rendu des polices sur macOS/Firefox */
+}
+
+/* Styles de base pour les liens hypertextes */
+a {
+    color: var(--primary-color);
+    text-decoration: none; /* Enlève le soulignement par défaut */
+    transition: color 0.2s ease; /* Transition douce pour la couleur au survol */
+}
+
+a:hover {
+    color: var(--primary-hover);
+    text-decoration: none; /* Maintient le non-soulignement au survol */
+}
+
+/* Optionnel : Styles de base pour les titres (peuvent être étendus) */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: calc(var(--spacing-unit) * 0.75);
+    font-weight: 600; /* Un peu plus gras par défaut */
+    line-height: 1.3;
+}

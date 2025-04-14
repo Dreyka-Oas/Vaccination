@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Components / Table (_table.css)
+   ========================================================================== */
+
+/**
+ * Styles pour les tableaux de données.
+ * Inclut les styles pour le conteneur responsive, les cellules, l'en-tête,
+ * les lignes et les styles spécifiques au contenu (dates d'expiration, etc.).
+ */
+
+/* Conteneur pour rendre le tableau responsive sur petits écrans */
+.table-responsive {
+    border: 1px solid #dee2e6; /* Bordure autour du conteneur */
+    border-radius: var(--card-border-radius); /* Arrondi correspondant aux cartes */
+    margin-bottom: var(--spacing-unit); /* Espace sous le tableau */
+    overflow-x: auto; /* Active le défilement horizontal si nécessaire */
+    -webkit-overflow-scrolling: touch; /* Améliore le défilement sur iOS */
+}
+
+/* Style de base du tableau */
+.table {
+    width: 100%; /* Prend toute la largeur du conteneur */
+    margin-bottom: 0; /* Pas de marge basse à l'intérieur de .table-responsive */
+    vertical-align: middle; /* Alignement vertical centré pour le contenu des cellules */
+    border-collapse: separate; /* Nécessaire pour border-radius sur les cellules/lignes */
+    border-spacing: 0; /* Pas d'espace entre les cellules */
+}
+
+/* Style des cellules (th et td) */
+.table th,
+.table td {
+    padding: 0.85rem 1rem; /* Padding intérieur des cellules */
+    font-size: 0.9rem; /* Taille de police dans les cellules */
+    border-top: 1px solid #dee2e6; /* Ligne de séparation horizontale */
+    text-align: left; /* Alignement par défaut à gauche */
+}
+
+/* Style spécifique pour les cellules d'en-tête (th) */
+.table thead th {
+    background-color: #f8f9fa; /* Fond légèrement grisé pour l'en-tête */
+    font-weight: 600; /* Texte en gras */
+    border-bottom: 2px solid #dee2e6; /* Ligne inférieure plus épaisse pour l'en-tête */
+    border-top: none; /* Pas de bordure supérieure pour l'en-tête */
+    white-space: nowrap; /* Empêche le retour à la ligne dans les en-têtes */
+    vertical-align: bottom; /* Alignement en bas pour l'en-tête */
+}
+
+/* Style au survol des lignes du corps du tableau */
+.table tbody tr:hover {
+    background-color: rgba(74, 144, 226, 0.05); /* Effet de survol subtil (bleu très clair) */
+}
+
+/* Style pour les tableaux zébrés (lignes alternées) */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.02); /* Couleur de fond très légère pour les lignes impaires */
+}
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: transparent; /* Assure que les lignes paires n'ont pas de fond par défaut */
+}
+
+/* Styles pour des contenus spécifiques dans les tableaux */
+
+/* Pour les descriptions/types longs avec troncature */
+.table-description,
+.table-types {
+    max-width: 300px; /* Largeur maximale avant troncature */
+    white-space: nowrap; /* Empêche le retour à la ligne */
+    overflow: hidden; /* Cache le contenu qui dépasse */
+    text-overflow: ellipsis; /* Affiche "..." */
+    display: inline-block; /* Nécessaire pour ellipsis */
+    vertical-align: middle; /* Meilleur alignement vertical */
+    cursor: help; /* Curseur indiquant qu'il y a plus d'infos (via tooltip par ex.) */
+}
+
+/* Style pour les dates expirées */
+.expired-date {
+    color: var(--danger-color); /* Rouge */
+    font-weight: bold;
+}
+
+/* Style pour les dates bientôt expirées */
+.soon-expired-date {
+    color: var(--warning-color); /* Jaune/Orange */
+    font-weight: 500; /* Moins gras que expiré */
+}
